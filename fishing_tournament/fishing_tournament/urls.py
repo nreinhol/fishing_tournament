@@ -25,6 +25,7 @@ from blog.views import (
     dashboard,
     dashboard_2020,
     dashboard_2021,
+    dashboard_2022,
     PostListView, 
     PostDetailView, 
     PostCreateView,
@@ -59,6 +60,7 @@ urlpatterns = [
     path('table/', table, name='table'),
     path('dashboard_2020/', dashboard_2020, name='npc_2020'),
     path('dashboard_2021/', dashboard_2021, name='npc_2021'),
+    path('dashboard_2022/', dashboard_2022, name='npc_2022'),
     path('rules/', rules, name='rules'),
     path('statistic/', statistic, name='statistic')
 ]
