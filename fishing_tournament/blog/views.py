@@ -146,6 +146,21 @@ def dashboard_2023(request):
 
 
 @login_required
+def dashboard_2024(request):
+    year = 2024
+    RankingList = data.RankingList(request, year)
+    context = {
+        'UserDataContainer': data.get_user_data_container(request, year),
+        'Usernames': RankingList.usernames,
+        'Scores': RankingList.scores,
+        'Winner': RankingList.winner,
+        'WinnerScore': RankingList.winner_score,
+        'AllFishes': data_utils.get_len_of_all_posts_of_year(request, year)
+    }
+    return render(request, 'blog/dashboard_2024.html', context)
+
+
+@login_required
 def table(request):
     context = {
         'posts': Post.objects.all()
